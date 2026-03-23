@@ -28,7 +28,7 @@ def tablazat():
     print("-" * 45)
     print(f"Összesen {len(termekek)} féle termék van raktáron.")
 
-    
+
 def felvetel():
     print("---ÚJ TERMÉKEK FELVÉTELE---")
     termeknev = input("Termék neve: ")
@@ -41,6 +41,7 @@ def felvetel():
     while not kezdokeszlet.isdigit():
         kezdokeszlet = input("Helytelen adat! Kezdőkészlet: ")
     termekek.append(Termek(termeknev, int(egysegar), int(kezdokeszlet)))
+    print(f"[SIKER] '{termeknev}' hozzáadva a rendszerhez.")
     mentes()
 
 def mentes():
@@ -53,6 +54,7 @@ def mentes():
 
 
 def eladas():
+    print("--- ELADÁS ---")
     nev = input("Melyik terméket szeretnéd megvásárolni? ")
 
     talalat = None
@@ -82,6 +84,7 @@ def eladas():
 
 
 def kereses():
+    print("--- KERESÉS ---")
     keres = input("Keresett kifejezés: ").lower()
     talalat = False
 
@@ -93,9 +96,11 @@ def kereses():
     if not talalat:
         print("Nincs ilyen termék.")
 
+print("--- RAKTÁRKEZELŐ RENDSZER v1.0 ---\n[INFO] Adatok betöltése a 'raktar.txt' fájlból... OK.")
+print("\n1. Készlet listázása\n2. Új termék felvétele\n3. Eladás\n4. Termék keresése\n5. Mentés és Kilépés")
+    
 megy = True
 while megy:
-    print("\n1. Készlet listázása\n2. Új termék felvétele\n3. Eladás\n4. Termék keresése\n5. Mentés és Kilépés")
     csinal =input("\nVálasszon műveletet (1-5): ")
     while not csinal.isdigit() or int(csinal) <1 or int(csinal) > 5:
         csinal = input("Adj meg számot 1-től 5-ig! ")
@@ -109,5 +114,6 @@ while megy:
     elif csinal == 4:
         kereses()
     else:
+        print("[INFO] Adatok mentése a 'raktar.txt' fájlba... KÉSZ.\nViszontlátásra!")
         megy = False
 mentes()
