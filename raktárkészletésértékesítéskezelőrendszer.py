@@ -6,4 +6,8 @@ class Termek:
         self.nev = nev
         self.ar = ar
         self.keszletmennyiseg = keszletmennyiseg
-        
+    
+
+
+termek = input("Melyik terméket szeretnéd megvásárolni? ")
+mennyiseg = input()
