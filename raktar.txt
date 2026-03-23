@@ -1,0 +1,5 @@
+kifli,80,5
+zsemle,70,20
+szappan,300,15
+milan,1,88
+pityes,800,4
