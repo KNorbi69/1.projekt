@@ -17,7 +17,11 @@ def tablazat(self):
         print(f"{termek.nev}             {termek.ar}           {termek.keszletmennyiseg}")
     print(f"---------------------------------------------------------\nÖsszesen {len(termekek)} féle termék van raktáron.")
 
-f = open("raktar.txt", "a", encoding="utf-8")
+
+
+
+
+
 
 
 def eladas():
@@ -45,7 +49,8 @@ def kereses():
 
 megy = True
 while megy:
-    csinal =input("1. Készlet listázása\n2. Új termék felvétele\n3. Eladás\n4. Termék keresése\n5. Mentés és Kilépés\n\nVálasszon műveletet (1-5): ")
+    print("1. Készlet listázása\n2. Új termék felvétele\n3. Eladás\n4. Termék keresése\n5. Mentés és Kilépés")
+    csinal =input("\nVálasszon műveletet (1-5): ")
     while not csinal.isdigit() or int(csinal) <1 or int(csinal) > 4:
         csinal = input("Adj meg számot 1-től 5-ig! ")
     if csinal == 1:
