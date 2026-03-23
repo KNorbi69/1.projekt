@@ -34,4 +34,18 @@ def kereses():
             if keres in ter:
                 print(f"[TALÁLAT] {ter.nev} - Ár: {ter.ar} Ft, Készlet: {ter.keszletmennyiseg} db")
 
-            
+megy = True
+while megy:
+    csinal =input("1. Készlet listázása\n2. Új termék felvétele\n3. Eladás\n4. Termék keresése\n5. Mentés és Kilépés\n\nVálasszon műveletet (1-5): ")
+    while not csinal.isdigit() or int(csinal) <1 or int(csinal) > 4:
+        csinal = input("Adj meg számot 1-től 5-ig! ")
+    if csinal == 1:
+        tablazat()
+    elif csinal == 2:
+        felvetel()
+    elif csinal == 3:
+        eladas()
+    elif csinal == 4:
+        kereses()
+    else:
+        megy = False
