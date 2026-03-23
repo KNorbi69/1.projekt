@@ -17,11 +17,18 @@ def tablazat(self):
         print(f"{termek.nev}             {termek.ar}           {termek.keszletmennyiseg}")
     print(f"---------------------------------------------------------\nÖsszesen {len(termekek)} féle termék van raktáron.")
 
-
-
-
-
-
+def felvetel(self):
+    print("---ÚJ TERMÉKEK FELVÉTELE---")
+    termeknev = input("Termék neve: ")
+    while termeknev.isdigit():
+        termeknev = input("Helytelen név! Termék neve: ")
+    egysegar = input("Egységár: ")
+    while not egysegar.isdigit():
+        egysegar = input("Helytelen ár! Egységár: ")
+    kezdokeszlet = input("Kezdőkészlet: ")
+    while not kezdokeszlet.isdigit():
+        kezdokeszlet = input("Helytelen adat! Kezdőkészlet: ")
+    termekek.append(Termek(termeknev,egysegar,kezdokeszlet))
 
 
 def eladas():
