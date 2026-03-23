@@ -1,15 +1,24 @@
 
 f = open("raktar.txt", "a", encoding="utf-8")
+szoveg = f.readlines()
+f.close()
+
 class Termek:
     def __init__(self,nev,ar,keszletmennyiseg):
         self.nev = nev
         self.ar = ar
         self.keszletmennyiseg = keszletmennyiseg
-    def adatok(self):
-        print(f"Név                  Ár(Ft)              Mennyiség (db)\n---------------------------------------------------------\n{self.nev}             {self.ar}           {self.keszletmennyiseg}\n{self.nev}             {self.ar}           {self.keszletmennyiseg}\n{self.nev}             {self.ar}            {self.keszészletmennyiseg}\n----------------------------------------------------------\nÖsszesen: {} féle termék a raktáron.")
-        
-termek = input("Melyik terméket szeretnéd megvásárolni? ")
-mennyiseg = input("")
+termekek = []
+for i in range(1,len(szoveg)):
+    termekek.append(Termek(szoveg[i].split(",")[0], szoveg[i].split(",")[1],szoveg[i].split(",")[2]))
+def tablazat(self):
+    print("---AKTUÁLIS KÉSZLET---\nNév                  Ár(Ft)              Mennyiség (db)\n---------------------------------------------------------")
+    for termek in termekek:
+        print(f"{termek.nev}             {termek.ar}           {termek.keszletmennyiseg}")
+    print(f"---------------------------------------------------------\nÖsszesen {len(termekek)} féle termék van raktáron.")
+
+f = open("raktar.txt", "a", encoding="utf-8")
+
 
 def eladas():
     termek = input("Melyik terméket szeretnéd megvásárolni? ")
